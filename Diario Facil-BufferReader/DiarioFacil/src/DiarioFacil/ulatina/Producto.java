@@ -79,7 +79,21 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "idProducto=" + idProducto + ", nombreProducto=" + nombreProducto + ", precioProducto=" + precioProducto + ", inventarioActual=" + inventarioActual + ", stockMinimo=" + stockMinimo + ", categoriaProducto=" + categoriaProducto + '}';
+                StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Id.Producto: "+this.idProducto);
+        sb.append("\n");
+        sb.append("Nombre Del Producto: "+this.nombreProducto);
+        sb.append("\n");
+        sb.append("Precio Del Producto: "+this.precioProducto);
+        sb.append("\n");
+        sb.append("Unidades Disponibles: "+this.inventarioActual);
+        sb.append("\n");
+        sb.append("Unidades minimas: "+this.stockMinimo);
+        sb.append("\n");
+        sb.append("Categoria Del Producto: "+this.categoriaProducto);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
     

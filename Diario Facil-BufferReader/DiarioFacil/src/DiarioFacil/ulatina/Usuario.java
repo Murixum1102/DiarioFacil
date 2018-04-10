@@ -1,5 +1,6 @@
 package DiarioFacil.ulatina;
 
+
 public abstract class Usuario {
 
     protected Integer id;
@@ -49,6 +50,12 @@ public abstract class Usuario {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
+    
+   
+   
+    
     
 
 }

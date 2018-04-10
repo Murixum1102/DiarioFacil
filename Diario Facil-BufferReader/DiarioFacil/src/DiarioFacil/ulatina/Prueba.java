@@ -1,73 +1,98 @@
 package DiarioFacil.ulatina;
 
 import java.io.*;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Prueba {
-    
- static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    static PrintStream out = System.out;
-    
-    public static void main(String[] args) throws IOException {
-        
 
+    static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    static PrintStream out = System.out;
+
+    public static void main(String[] args) throws IOException {
+        DiarioFacil diarioFacil = new DiarioFacil();
+        List<Cliente> listaClientes = new ArrayList<>();
 
         int opc;
         boolean noSalir = true;
+        boolean conexion = true;
 
         do {
             mostrarMenu();
             opc = leerOpcion();
-            noSalir = ejecutarAccion(opc);
-        } while (noSalir);
+            noSalir = ejecutarAccionMenuInicio(opc, diarioFacil, listaClientes, conexion);
+
+        } while (noSalir == true);
     }
 
     public static void mostrarMenu() {
 
-        out.println();
-        out.println("1.  Agregar producto");
-        out.println("2.  Modificar producto.");
-        out.println("3.  Login.");
-        out.println("4. Salir");
-        out.println();
+        out.println("\n===========================================================");
+        out.println("1.  Iniciar Seccion.");
+        out.println("2.  Registrarse en el Sistema.");
+        out.println("3.  Salir.");
+        out.println("===========================================================\n");
+    }
+
+    public static void mostrarPaginaCliente(Cliente usuario) {
+
+        out.println("\n===========================================================");
+        out.println("1.  Ver Catalogo.");
+        out.println("2.  Ver Carrito.");
+        out.println("3.  Ver Combos.");
+        if (usuario.getTipoCliente() == true) {
+            out.println("4.  Ver Promociones.");
+        }
+        out.println("5.  Salir.");
+        out.println("===========================================================\n");
     }
 
     public static int leerOpcion() throws java.io.IOException {
 
         int opcion;
+        out.println("\n===========================================================\n");
 
-        out.print("Seleccione su opción: ");
+        out.print("Seleccione su opción:\n");
         opcion = Integer.parseInt(in.readLine());
-        out.println();
+        out.println("\n===========================================================\n");
 
         return opcion;
     }
 
-    public static boolean ejecutarAccion(int popcion) throws java.io.IOException {
-
+    public static boolean ejecutarAccionMenuInicio(int opcion, DiarioFacil D, List<Cliente> lstCliente, boolean conexion) throws java.io.IOException {
+        int opc;
         boolean noSalir = true;
-        int numProd = 0;
+        int numProd = opcion;
 
-        switch (popcion) {
+        switch (numProd) {
 
-            case 1: //Opcion Agregar Producto
-
-                agregarProducto();
+            case 1: //Opcion Ingresar en el sistema como cliente
+                Cliente usuario = new Cliente();
+                out.print("\nIngrese su nombre de usuario\n");
+                String nombre = in.readLine();
+                out.print("Ingrese su contrasena\n");
+                String contrasena = in.readLine();
+                usuario = Cliente.inicioSeccion(D, nombre, contrasena);
+                if (usuario.login = true) {
+                    conexion = true;
+                    do {
+                        mostrarPaginaCliente(usuario);
+                        opc = leerOpcion();
+                        ejecutarAccionPaginaCliente(opc);
+                    } while (conexion == true);
+                }
                 break;
 
-            case 2:// Modificar Producto
+            case 2:// Registrarse
 
-                out.println();
-                modificarProducto();
+                lstCliente.add(Cliente.Registrarse());
+                D.setLstCliente(lstCliente);
                 break;
 
-            case 3:// Login 
+            case 3://Salir del sistema por completo
 
-                out.println();
-                login();
-                break;
-            case 4: //Salir de la aplicacion
                 noSalir = false;
+
                 break;
 
             default: //Cualquier otro valor dado por el usuario se considera inválido
@@ -79,25 +104,42 @@ public class Prueba {
         return noSalir;
     }
 
-    public static void agregarProducto() {
-        System.out.println("Hacer logica para AGREGAR el producto");
+    public static boolean ejecutarAccionPaginaCliente(int opcion) throws java.io.IOException {
+
+        boolean conexion = true;
+        int numProd = opcion;
+
+        switch (numProd) {
+
+            case 1: //Opcion ver catalogo
+
+                break;
+
+            case 2:// Opcion Ver carrito
+
+                break;
+
+            case 3:// Opcion Ver combos
+
+                break;
+
+            case 4:// Opcion Ver Promociones(Solo Premium)
+
+                break;
+
+            case 5:// Login 
+
+                conexion = false;
+
+                break;
+
+            default: //Cualquier otro valor dado por el usuario se considera inválido
+
+                out.println("Opcion inválida");
+                out.println();
+                break;
+        }
+        return conexion;
     }
 
-    public static void modificarProducto() {
-        System.out.println("Hacer logica para MODIFICAR el producto");
-    }
-
-    public static void login() throws IOException {
-        out.println("Digite usuario:");
-        String user = in.readLine();
-        out.println("Digite Contraseña:");
-        String pass = in.readLine();
-
-        System.out.println("usuario: " + user + " clave: " + pass);
-
-    }
-
-
-    
-    
 }

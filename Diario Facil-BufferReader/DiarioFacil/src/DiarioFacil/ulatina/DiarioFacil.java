@@ -106,7 +106,28 @@ public class DiarioFacil {
 
     @Override
     public String toString() {
-        return "DiarioFacil{" + "lstProductos=" + lstProductos + ", lstPromociones=" + lstPromociones + ", lstCombos=" + lstCombos + ", lstProveedor=" + lstProveedor + ", lstCliente=" + lstCliente + ", lstOrden=" + lstOrden + ", lstCategorias=" + lstCategorias + ", lstAdministradores=" + lstAdministradores + ", lstProductosConsumidos=" + lstProductosConsumidos + '}';
+        StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Lista Productos:"+this.lstProductos);
+        sb.append("\n");
+        sb.append("Lista Promociones:"+this.lstPromociones);
+        sb.append("\n");
+        sb.append("Lista Combos:"+this.lstCombos);
+        sb.append("\n");
+        sb.append("Lista Proveedores:"+this.lstProveedor);
+        sb.append("\n");
+        sb.append("Lista Clientes:"+this.lstCliente);
+        sb.append("\n");
+        sb.append("Lista Ordenes:"+this.lstOrden);
+        sb.append("\n");
+        sb.append("Lista Categorias:"+this.lstCategorias);
+        sb.append("\n");
+        sb.append("Lista Administradores:"+this.lstAdministradores);
+        sb.append("\n");
+        sb.append("Lista Productos Consumidos:"+this.lstProductosConsumidos);
+        sb.append("\n=============================================================================");
+        
+        return   sb.toString();
     }
 
    

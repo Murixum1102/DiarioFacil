@@ -40,7 +40,13 @@ public class Promocion {
 
     @Override
     public String toString() {
-        return "Promocion{" + "productoPromocion=" + productoPromocion + ", descuento=" + descuento + '}';
+        StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Producto En Promocion: "+this.productoPromocion);
+        sb.append("\n");
+        sb.append("Descuento: "+this.descuento);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
     

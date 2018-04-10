@@ -81,7 +81,21 @@ public class Proveedor {
 
     @Override
     public String toString() {
-        return "Proveedor{" + "idProveedor=" + idProveedor + ", nombreProveedor=" + nombreProveedor + ", correoProveedor=" + correoProveedor + ", telefonoProveedor=" + telefonoProveedor + ", direccionProveedor=" + direccionProveedor + ", LstProductosProveedor=" + LstProductosProveedor + '}';
+        StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Id.Proveedor: "+this.idProveedor);
+        sb.append("\n");
+        sb.append("Nombre Del Proveedor: "+this.nombreProveedor);
+        sb.append("\n");
+        sb.append("Correo Del Proveedor: "+this.correoProveedor);
+        sb.append("\n");
+        sb.append("Telefono Del Proveedor: "+this.telefonoProveedor);
+        sb.append("\n");
+        sb.append("Direccion Del Proveedor: "+this.direccionProveedor);
+        sb.append("\n");
+        sb.append("Productos Del Proveedor: "+this.LstProductosProveedor);
+        sb.append("\n=============================================================================");
+        return   sb.toString();     
     }
     
     

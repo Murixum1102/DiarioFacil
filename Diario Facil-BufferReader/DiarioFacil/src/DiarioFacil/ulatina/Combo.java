@@ -51,7 +51,15 @@ public class Combo {
 
     @Override
     public String toString() {
-        return "Combo{" + "idCombo=" + idCombo + ", precioCombo=" + precioCombo + ", LstProductosCombo=" + LstProductosCombo + '}';
+                StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Id.Combo: "+this.idCombo);
+        sb.append("\n");
+        sb.append("Precio De Combo: "+this.precioCombo);
+        sb.append("\n");
+        sb.append("Productos Del Combo: "+this.LstProductosCombo);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
 }

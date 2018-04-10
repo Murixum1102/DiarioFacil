@@ -39,7 +39,13 @@ public class ProductoConsumido {
 
     @Override
     public String toString() {
-        return "ProductoConsumido{" + "productoConsumido=" + productoConsumido + ", cantidadConsumida=" + cantidadConsumida + '}';
+        StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Producto Consumido: "+this.productoConsumido);
+        sb.append("\n");
+        sb.append("Cantidad Consumida: "+this.cantidadConsumida);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
     

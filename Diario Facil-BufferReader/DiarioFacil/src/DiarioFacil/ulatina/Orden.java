@@ -62,7 +62,17 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "idOrden=" + idOrden + ", fechaOrden=" + fechaOrden + ", totalOrden=" + totalOrden + ", LstProductos=" + LstProductos + '}';
+               StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Numero De Orden: "+this.idOrden);
+        sb.append("\n");
+        sb.append("Fecha De Orden: "+this.fechaOrden);
+        sb.append("\n");
+        sb.append("Contrasena: "+this.LstProductos);
+        sb.append("\n");
+        sb.append("Total De La Orden:" +this.totalOrden);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
     

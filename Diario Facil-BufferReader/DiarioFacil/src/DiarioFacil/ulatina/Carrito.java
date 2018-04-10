@@ -50,7 +50,15 @@ public class Carrito {
 
     @Override
     public String toString() {
-        return "Carrito{" + "LstProductosCarrito=" + LstProductosCarrito + ", LstPromocionesCarrito=" + LstPromocionesCarrito + ", LstCombosCarrito=" + LstCombosCarrito + '}';
+             StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Combos: "+this.LstCombosCarrito);
+        sb.append("\n");
+        sb.append("Promociones: "+this.LstPromocionesCarrito);
+        sb.append("\n");
+        sb.append("Lista Productos: "+this.LstProductosCarrito);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
      
 }

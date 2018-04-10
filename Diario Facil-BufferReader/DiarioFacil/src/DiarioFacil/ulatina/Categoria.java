@@ -40,7 +40,13 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Categoria{" + "categoria=" + categoria + ", LstProductosCategoria=" + LstProductosCategoria + '}';
+                StringBuffer sb=new StringBuffer();
+        sb.append("=============================================================================\n");
+        sb.append("Categoria: "+this.categoria);
+        sb.append("\n");
+        sb.append("Productos De La Categoria: "+this.LstProductosCategoria);
+        sb.append("\n=============================================================================");
+        return   sb.toString();
     }
     
 }
